@@ -2,13 +2,11 @@ from dataclasses import dataclass
 import cfpq_data
 import networkx
 
-
 @dataclass
 class Graph:
     edges_cnt: int
     nodes_cnt: int
     labels: list
-    
 
 def graph_info(name):
     path = cfpq_data.download(name)
