@@ -1,4 +1,3 @@
-import pytest
 from project.task1 import *
 import networkx
 
