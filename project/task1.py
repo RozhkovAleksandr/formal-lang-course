@@ -24,4 +24,5 @@ def save_to_pydot_labeled_two_cycles_graph(n, m, labels, path):
     graph = cfpq_data.labeled_two_cycles_graph(n, m, labels=labels)
     networkx.drawing.nx_pydot.write_dot(graph, path)
 
+
 save_to_pydot_labeled_two_cycles_graph(3, 2, ["a", "b"], "a.dot")

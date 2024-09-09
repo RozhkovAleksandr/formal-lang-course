@@ -2,7 +2,7 @@ import pytest
 from project.task1 import (
     save_to_pydot_labeled_two_cycles_graph,
     get_graph_info,
-    GraphInfo
+    GraphInfo,
 )
 import networkx
 
