@@ -1,8 +1,6 @@
 from pyformlang.finite_automaton import (
     DeterministicFiniteAutomaton,
     NondeterministicFiniteAutomaton,
-    State,
-    Symbol,
 )
 from pyformlang.regular_expression import Regex
 from networkx import MultiDiGraph
