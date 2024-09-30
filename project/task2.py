@@ -6,8 +6,6 @@ from pyformlang.regular_expression import Regex
 from networkx import MultiDiGraph
 from typing import Set
 
-import networkx as nx
-
 
 def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
     dfa = Regex(regex).to_epsilon_nfa().to_deterministic()
