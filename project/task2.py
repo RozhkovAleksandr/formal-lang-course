@@ -30,19 +30,3 @@ def graph_to_nfa(
         nfa.add_final_state(state)
 
     return nfa.remove_epsilon_transitions()
-
-
-graph = nx.MultiDiGraph()
-graph.add_edges_from(
-    [
-        (1, 2, {"label": "a"}),
-        (1, 3, {"label": "b"}),
-        (2, 4, {"label": "a"}),
-        (3, 4, {"label": "b"}),
-    ]
-)
-
-
-nfa = graph_to_nfa(graph, start_states={1}, final_states={4})
-
-print(nfa._states)
