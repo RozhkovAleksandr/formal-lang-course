@@ -1,7 +1,5 @@
 from pyformlang.cfg import CFG, Variable, Production, Epsilon
-import pyformlang
 import networkx as nx
-from pyformlang.cfg import Terminal
 
 
 def cfg_to_weak_normal_form(cfg: CFG) -> CFG:
