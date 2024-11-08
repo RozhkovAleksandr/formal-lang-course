@@ -15,7 +15,7 @@ def _initial_front(
     matices = []
     for dfa_idx, nfa_idx in dfa_start_state:
         matrix = csr_matrix(
-            (len(adj_matrix_dfa.nodes.keys()), len(adj_matrix_nfa.nodes.keys())),
+            (len(adj_matrix_dfa.num_sts.keys()), len(adj_matrix_nfa.num_sts.keys())),
             dtype=bool,
         )
         matrix[dfa_idx, nfa_idx] = True
@@ -32,7 +32,7 @@ def ms_bfs_based_rpq(
     adj_matrix_dfa = AdjacencyMatrixFA(regex_dfa)
     adj_matrix_nfa = AdjacencyMatrixFA(grapth_nfa)
 
-    index_to_state_nfa = {index: state for state, index in adj_matrix_nfa.nodes.items()}
+    index_to_state_nfa = {index: state for state, index in adj_matrix_nfa.num_sts.items()}
     symbols = (
         adj_matrix_dfa.boolean_decomposition.keys()
         & adj_matrix_nfa.boolean_decomposition.keys()
@@ -45,7 +45,7 @@ def ms_bfs_based_rpq(
     front = _initial_front(adj_matrix_dfa, adj_matrix_nfa)
     visited = front
 
-    m = len(adj_matrix_dfa.nodes.keys())
+    m = len(adj_matrix_dfa.num_sts.keys())
     dfa_start_state = list(
         product(adj_matrix_dfa.start_nodes, adj_matrix_nfa.start_nodes)
     )
