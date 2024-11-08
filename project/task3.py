@@ -16,12 +16,14 @@ class AdjacencyMatrixFA:
             self.final_nodes = set()
             self.nodes = dict()
             self.boolean_decomposition = dict()
+            self.num_sts = 0
             return
 
         graph = automaton.to_networkx()
         self.nodes = {state: i for (i, state) in enumerate(graph.nodes)}
         self.start_nodes = {self.nodes[state] for state in automaton.start_states}
         self.final_nodes = {self.nodes[state] for state in automaton.final_states}
+        self.num_sts = len(automaton.states)
 
         nodes_num = len(self.nodes)
         matrixes = {
