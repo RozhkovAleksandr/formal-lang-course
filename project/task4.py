@@ -32,7 +32,9 @@ def ms_bfs_based_rpq(
     adj_matrix_dfa = AdjacencyMatrixFA(regex_dfa)
     adj_matrix_nfa = AdjacencyMatrixFA(grapth_nfa)
 
-    index_to_state_nfa = {index: state for state, index in adj_matrix_nfa.num_sts.items()}
+    index_to_state_nfa = {
+        index: state for state, index in adj_matrix_nfa.num_sts.items()
+    }
     symbols = (
         adj_matrix_dfa.boolean_decomposition.keys()
         & adj_matrix_nfa.boolean_decomposition.keys()
