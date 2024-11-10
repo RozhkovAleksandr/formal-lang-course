@@ -9,6 +9,12 @@ from project.task3 import AdjacencyMatrixFA, intersect_automata
 from project.task6 import cfg_to_weak_normal_form
 from project.task2 import graph_to_nfa
 
+def cfg_to_rsm(cfg: CFG) -> RecursiveAutomaton:
+    return RecursiveAutomaton.from_text(cfg.to_text())
+
+
+def ebnf_to_rsm(ebnf: str) -> RecursiveAutomaton:
+    return RecursiveAutomaton.from_text(ebnf)
 
 def rsm_to_nfa(rsm: RecursiveAutomaton):
     nfa = NondeterministicFiniteAutomaton()
